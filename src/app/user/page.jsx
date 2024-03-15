@@ -12,7 +12,7 @@ const UserPage = () => {
         <main className='UserPageFull'>
             <div className='UserPageBar'>
                 <div className='UserPageTxt'>
-                    <p>SUPPLAY CHAIN</p> <Link href={''}><Image className='MenuEmBarra' src={Menu} alt='Icone menu em barra' /></Link>
+                     <Link href={''}><Image className='MenuEmBarra' src={Menu} alt='Icone menu em barra' /></Link>
                 </div>
 
                 <div className='UserPageIcon'>
@@ -26,8 +26,7 @@ const UserPage = () => {
                     <p>USUÁRIOS</p> <Link href={''}><Image className='RArrow' src={RArrow} alt='Icone RArrow' /></Link>
                 </div>
                 <div className='UserList'>
-                    {/* <UserList></UserList> */}
-
+                <UserList></UserList>
                 </div>
 
             </div>

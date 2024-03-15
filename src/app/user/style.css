@@ -18,6 +18,8 @@
     gap: 15rem;
     border: solid 1px #A4A4A4;
     padding: 1rem 0rem 1rem 1rem;
+    border: solid 2px red;
+
 }
 
 .UserPageTxt p, .UserSideBar p {
@@ -30,6 +32,7 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+
 }
 
 .MenuEmBarra, .Bell{
@@ -40,6 +43,7 @@
 .Profile, .RArrow{
     width: 1.7rem;
     height: 1.7rem;
+    padding-right: .3rem;
 }
 
 .MenuUserList{
@@ -51,3 +55,6 @@
 }
 
 
+.UserList{
+    border: solid 2px blue;
+}

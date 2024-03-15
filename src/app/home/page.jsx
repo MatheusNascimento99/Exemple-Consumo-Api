@@ -26,7 +26,6 @@ const LoginPage = () => {
             console.log(response)
             
         } catch (error) {
-            console.log(response)
             alert(error.response.data.error)
             console.log(error.response)
 
