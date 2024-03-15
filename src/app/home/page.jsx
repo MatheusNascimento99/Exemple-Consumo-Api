@@ -4,7 +4,7 @@ import style from "./style.css";
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from 'next/image';
-import lg from '../../../assets/lg.png';
+import lg from '../../assets/lg.png';
 import { useRouter } from "next/navigation";
 
 
@@ -22,17 +22,15 @@ const LoginPage = () => {
 
         try {
             response = await axios.post('https://reqres.in/api/login', formulario)
-
             router.push('/user')
-
+            console.log(response)
+            
         } catch (error) {
-        console.log(response)
+            console.log(response)
             alert(error.response.data.error)
             console.log(error.response)
 
         }
-
-        /* console.log('submeteu', formulario); */
 
     };
 
