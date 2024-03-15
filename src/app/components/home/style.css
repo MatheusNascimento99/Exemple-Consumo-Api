@@ -1,0 +1,90 @@
+@import url(../../globals.css);
+
+.HomeFull{
+    display: flex;
+    
+}
+
+.LeftSide{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.LeftSide h1{
+    color: #9F9F9F;
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: left;
+    padding: 14.4rem 5rem 15.4rem 7rem;
+}
+
+.LeftSide p{
+    color: #A4A4A4;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 3rem;
+}
+
+.RightSide p {
+    color: #A4A4A4;
+    font-weight: 600;
+}
+
+.logo{
+    width: auto;
+    height: auto;
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+}
+
+
+
+.RightSide{
+    background-color: #F5F5F5;
+    border: 20px solid #D9D9D9;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;    
+}
+
+
+
+.HomeInput input{
+    padding: 1rem;
+    margin: 1rem 5rem 1rem 5rem;
+    align-items: center;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    color: #B0B0B0;
+    font-weight: 400;
+
+}
+
+.RecPassword{
+    display: flex;
+    justify-content: space-between;
+    padding:3rem;
+}
+
+.HomeBtn{
+    width: 7rem;
+    height: 3rem;
+    font-weight: 600;
+    align-self: center;
+    border: none;
+    background-color: #FFFFFF;
+    color: #B0B0B0;
+    border-radius: 10px;
+}
+
+
+.RecPassword p{
+    color: #B0B0B0;
+}
