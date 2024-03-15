@@ -1,17 +1,21 @@
 "use client";
+import Image from "next/image";
+import userListCss from "./userListCss.css";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 const UserList = () => {
   const [listuser, setListUser] = useState([]);
+  const [total, setTotal] = useState(null);
 
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const response =  await axios.get(
+        const response = await axios.get(
           "https://reqres.in/api/users?page=1&per_page=5"
         );
         setListUser(response.data.data);
+        setTotal(response.data.total);
         console.log(response.data.data);
       } catch (error) {
         alert(error.response.data.error);
@@ -24,20 +28,43 @@ const UserList = () => {
 
   return (
     <main>
-      <h1>Lista de Usuários</h1>
-      <ul>
-        {listuser.map((user) => ( 
-          <li key={user.id}>
-            <li>
-                {user.id} 
-                {user.first_name}
-                {user.last_name}
-                {user.email}
-
-            </li>
-          </li>
-        ))}
-      </ul>
+      <div className="TableBar">
+        <h4>USUÁRIOS</h4> <button>NOVO</button>
+      </div>
+      {/* TABELA USERS */}
+      <table className="TableUserList">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>PRIMEIRO NOME</th>
+            <th>ÚLTIMO NOME</th>
+            <th>E-MAIL</th>
+            <th>FOTO</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listuser.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.first_name}</td>
+              <td>{user.last_name}</td>
+              <td>{user.email}</td>
+              <td>
+                {" "}
+                <Image
+                  src={user.avatar}
+                  width={50}
+                  height={50}
+                  alt="Foto avatar usuário"
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="TableFooter">
+        {listuser.length} de {total}
+      </div>
     </main>
   );
 };
