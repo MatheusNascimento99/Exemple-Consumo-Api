@@ -1,21 +1,40 @@
 "use client"
-import React, { useState } from "react";
+import axios from "axios";
 import style from "./style.css";
+import Link from "next/link";
+import React, { useState } from "react";
 import Image from 'next/image';
 import lg from '../../../assets/lg.png';
+import { useRouter } from "next/navigation";
 
 
 const LoginPage = () => {
+    const router = useRouter();
     const [formulario, setFormulario] = useState({
         email: '',
         password: ''
     })
 
 
-    const aoSubmeter = (e) => {
+    const aoSubmeter = async (e) => {
         e.preventDefault()
-        console.log('submeteu', formulario);
-    }
+        let response;
+
+        try {
+            response = await axios.post('https://reqres.in/api/login', formulario)
+
+            router.push('/user')
+
+        } catch (error) {
+        console.log(response)
+            alert(error.response.data.error)
+            console.log(error.response)
+
+        }
+
+        /* console.log('submeteu', formulario); */
+
+    };
 
     const aoAlterarValores = (e) => {
         const { name, value } = e.target
@@ -40,16 +59,16 @@ const LoginPage = () => {
                 <p>LOGIN</p>
                 <form onSubmit={aoSubmeter}>
                     <div className="HomeInput">
-                        <input placeholder="USUÁRIO" type="text" name="email" onChange={aoAlterarValores}></input>
-                        <input placeholder="SENHA" type="password" name="password" onChange={aoAlterarValores}></input>
+                        <input required placeholder="USUÁRIO" type="text" name="email" onChange={aoAlterarValores}></input>
+                        <input required placeholder="SENHA" type="password" name="password" onChange={aoAlterarValores}></input>
                     </div>
                     <button type="submit" className="HomeBtn">LOGAR</button>
                 </form>
 
 
                 <div className="RecPassword">
-                    <p>ESQUECI MINHA SENHA</p>
-                    <p>CADASTRE-SE</p>
+                    <Link className="LinksHome" href={''}><p>ESQUECI MINHA SENHA</p></Link>
+                    <Link className="LinksHome" href={''}><p>CADASTRE-SE</p></Link>
                 </div>
             </div>
         </main>
