@@ -1,0 +1,47 @@
+@import url(../../globals.css);
+
+
+
+.d {
+    color: black;
+    font-size: 35px;
+    font-family: raleway;
+    font-weight: 600;
+    padding-top: 70px;
+    margin-left: 80px;
+}
+
+#novat {
+    margin-left: 280px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+
+
+.btnnao {
+    background-color: blue;
+    color:red ;
+    border-radius: 10px;
+    height: 77px;
+    width: 268.42px;
+    margin-top: 50px;
+    margin-left: 60px;
+    font-family: Raleway;
+    font-size: 30px;
+    font-weight: 600s;
+
+}
+
+.btnsim {
+    background-color: whitesmoke ;
+    border: 1px solid;
+    border-radius: 10px;
+    height: 77px;
+    width: 268.42px;
+    margin-left: 60px;
+    font-family: Raleway;
+    font-size: 30px;
+    font-weight: 600s;
+
+}

@@ -3,16 +3,21 @@ import Image from "next/image";
 import userListCss from "./userListCss.css";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import Pencil from '../../assets/pencil.png';
+import ModalUser from '../components/modal/modal.jsx';
+
 
 const UserList = () => {
   const [listuser, setListUser] = useState([]);
   const [total, setTotal] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [btn, setBtn] = useState(false);
 
   useEffect(() => {
     const getUsers = async () => {
       try {
         const response = await axios.get(
-          "https://reqres.in/api/users?page=1&per_page=5"
+          "https://reqres.in/api/users?pages=1&per_page=5"
         );
         setListUser(response.data.data);
         setTotal(response.data.total);
@@ -26,8 +31,17 @@ const UserList = () => {
     getUsers();
   }, []);
 
+  const openModal =() => {
+    setModalOpen(true)
+    setBtn(true)
+  };
+
+  const closeModal =() => {
+    setModalOpen(false)
+  };
+
   return (
-    <main>
+    <main className="UserList Full">
       <div className="TableBar">
         <h4>USUÁRIOS</h4> <button>NOVO</button>
       </div>
@@ -35,6 +49,7 @@ const UserList = () => {
       <table className="TableUserList">
         <thead>
           <tr>
+          <th></th>
             <th>ID</th>
             <th>PRIMEIRO NOME</th>
             <th>ÚLTIMO NOME</th>
@@ -45,6 +60,7 @@ const UserList = () => {
         <tbody>
           {listuser.map((user) => (
             <tr key={user.id}>
+              <td><button className="btnEdit"><Image onClick={openModal} className="Pencil" src={Pencil} alt="Imagem caneta"/></button></td>
               <td>{user.id}</td>
               <td>{user.first_name}</td>
               <td>{user.last_name}</td>
@@ -65,6 +81,7 @@ const UserList = () => {
       <div className="TableFooter">
         {listuser.length} de {total}
       </div>
+      {modalOpen && <ModalUser onClose={closeModal} btn={btn} />}
     </main>
   );
 };
