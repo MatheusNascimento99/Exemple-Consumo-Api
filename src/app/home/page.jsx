@@ -15,6 +15,7 @@ const LoginPage = () => {
         password: ''
     })
 
+    //!POST - Login
 
     const aoSubmeter = async (e) => {
         e.preventDefault()
@@ -23,10 +24,11 @@ const LoginPage = () => {
         try {
             response = await axios.post('https://reqres.in/api/login', formulario)
             router.push('/user')
+            alert(`Login realizado com sucesso! status ${response.status}` );
             console.log(response)
             
         } catch (error) {
-            alert(error.response.data.error)
+            alert(`Usuário não encontrado! status ${error.response.status}` );
             console.log(error.response)
 
         }
