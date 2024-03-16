@@ -67,7 +67,7 @@ function ModalUser({ mostrar, onClose, setBtn, btn, userId }) {
             }
         } */
         try {
-            
+
             const response = await axios.delete(`https://reqres.in/api/users/${id}`);
             alert(`Usuário excluído com sucesso! status ${response.status}`);
             console.log(response.status);
@@ -90,42 +90,60 @@ function ModalUser({ mostrar, onClose, setBtn, btn, userId }) {
         onClose();
     }
 
-    const estiloModal = {
-        display: mostrar ? 'block' : 'none',
-        position: 'fixed',
-        zIndex: 1,
-        left: 0,
-        top: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'auto',
-        backgroundColor: 'rgba(0,0,0,0.4)',
-        padding: '50px'
-    };
 
-    const estiloConteudo = {
-        backgroundColor: '#fefefe',
-        margin: '15% auto',
-        padding: '20px',
-        border: '1px solid #888',
-        width: '758px',
-        height: '436px',
-    };
 
     return (
         <main className='ModalContainer'>
             <div className='Modal'>
+                <h4>EDITAR USUÁRIOS</h4>
                 {dataUser && (
-                    <div>
-                        <p>Id: {dataUser.id}</p>
-                        <p>Nome: {dataUser.first_name}</p>
-                        <p>Sobrenomee:{dataUser.last_name}</p>
-                        <p>E-mail: {dataUser.email}</p>
+                    <div className='ModalView'>
+                        
+                        <div className="SideLeft">
+                        <div className='ModalLabel'>
+                            <label htmlFor="id">Id</label>
+                            <p>{dataUser.id}</p>
+                        </div>
+                        <div className='ModalLabel'>
+                            <label htmlFor="first_name">Nome</label>
+                            <p>{dataUser.first_name}</p>
+                        </div>
+                        <div className='ModalLabel'>
+                            <label htmlFor="last_name">Sobrenome</label>
+                            <p>{dataUser.last_name}</p>
+                        </div>
+                        </div>
+                        <div className="SideRight">
+                        <div className='ModalLabel'>
+                            <label htmlFor="Email">Email</label>
+                            <p>{dataUser.email}</p>
+                        </div>
+                        <div className='ModalLabel'>
+                            <label htmlFor="Foto">Foto</label>
+                            <p>{dataUser.avatar}</p>
+                        </div>
+                        <div className='ModalLabel'>
+                            <label htmlFor="OutrosCampos">OutrosCampos</label>
+                            <p>{'outros campos'}</p>
+                        </div>
+                        </div>
+                        
+                        
+
+
                     </div>
                 )}
-                <button onClick={deletUserId} >EXCLUIR</button>
-                <button onClick={closeModal} >CANCELAR</button>
-                <button onClick={updateUserId} >SALVAR</button>
+                <div className='btnModal'>
+                    <div className='btnModalOne'>
+                        <button onClick={deletUserId} >EXCLUIR</button>
+                    </div>
+                    <div className='btnModalTwu'>
+                        <button onClick={closeModal} >CANCELAR</button>
+                        <button onClick={updateUserId} >SALVAR</button>
+                    </div>
+                </div>
+
+
 
             </div>
         </main>
