@@ -12,7 +12,9 @@ const UserList = () => {
   const [total, setTotal] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [btn, setBtn] = useState(false);
+  const [userId, setUserId] = useState(null);
 
+    //!GET rota usuários
   useEffect(() => {
     const getUsers = async () => {
       try {
@@ -31,13 +33,17 @@ const UserList = () => {
     getUsers();
   }, []);
 
-  const openModal =() => {
+  const openModal =(userId) => {
+    setUserId(userId);
     setModalOpen(true)
     setBtn(true)
+    console.log(userId)
   };
 
   const closeModal =() => {
     setModalOpen(false)
+    setBtn(false)
+
   };
 
   return (
@@ -60,7 +66,7 @@ const UserList = () => {
         <tbody>
           {listuser.map((user) => (
             <tr key={user.id}>
-              <td><button className="btnEdit"><Image onClick={openModal} className="Pencil" src={Pencil} alt="Imagem caneta"/></button></td>
+              <td><button className="btnEdit"><Image onClick={() => openModal(user.id)} className="Pencil" src={Pencil} alt="Imagem caneta"/></button></td>
               <td>{user.id}</td>
               <td>{user.first_name}</td>
               <td>{user.last_name}</td>
@@ -81,7 +87,7 @@ const UserList = () => {
       <div className="TableFooter">
         {listuser.length} de {total}
       </div>
-      {modalOpen && <ModalUser onClose={closeModal} btn={btn} />}
+      {modalOpen && <ModalUser onClose={closeModal} setBtn={setBtn} btn={btn} userId={userId} />}
     </main>
   );
 };
