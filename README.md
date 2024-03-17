@@ -56,13 +56,36 @@ npm run dev
 
 <br>
 <br>
+
 # Telas
-## Telas inical
+
+## Tela inical - teste e-mail inválido:
+![image](https://github.com/MatheusNascimento99/hmz-teste-front/assets/139829100/be658bc1-64f4-4ee8-a42a-5f06652fdba0)
+
+## Tela inical - teste e-mail válido:
+![image](https://github.com/MatheusNascimento99/hmz-teste-front/assets/139829100/0ccbecfb-0a06-414f-8703-d4246ac31b1d)
+
+## Tela Usuário - teste carregamento da lista de usuários:
+![image](https://github.com/MatheusNascimento99/hmz-teste-front/assets/139829100/0f48369a-a2db-481c-9516-490b1f2d6453)
+
+## Tela Usuário - teste carregamento usuário por id da lista de usuários:
+![image](https://github.com/MatheusNascimento99/hmz-teste-front/assets/139829100/286bb2a5-41fe-4aa3-9a9b-ddbf86c22c6f)
+
+## Tela Usuário - teste botão exclusão de usuário por id da lista de usuários:
+![image](https://github.com/MatheusNascimento99/hmz-teste-front/assets/139829100/e022beb0-0d1c-4ac2-a046-085bce35c77d)
+![image](https://github.com/MatheusNascimento99/hmz-teste-front/assets/139829100/5e15211b-54a4-4f26-83d7-eed7d9c45262)
+
+## Tela Usuário - teste botão salvar alterações de usuário por id da lista de usuários:
+![image](https://github.com/MatheusNascimento99/hmz-teste-front/assets/139829100/3855932a-3210-4d0a-971a-49d90b66d01b)
+![image](https://github.com/MatheusNascimento99/hmz-teste-front/assets/139829100/4b8d5671-af6b-4324-b9cf-009a8dfea247)
+
+
 
 
 ## Comando padrão para instalção do programa conforme documentação:
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 
