@@ -42,6 +42,9 @@
   align-items: center;
   display: flex;
   gap: 20vw;
+  max-width: 100%;
+  flex-wrap: wrap;
+
 }
 
 .SideLeft {
@@ -62,6 +65,7 @@
   align-items: center;
   color: #000000;
   font-weight: 400;
+  max-width: 100%;
 }
 
 .ModalLabel {
@@ -76,7 +80,6 @@
 
 .btnModal {
   display: flex;
-  margin-top: 2.5rem;
   margin-top: 6rem;
 }
 
@@ -88,3 +91,22 @@
   gap: 2vw;
   display: flex;
 }
+
+@media screen and (max-width:975px) {
+
+  .ModalView {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+  }
+
+  .Modal{
+    width: 50vw;
+  height: 590px;
+  }
+
+  .btnModal {
+  margin-top: 1rem;
+  }
+}
+

@@ -6,6 +6,9 @@ import React, { useState } from "react";
 import Image from 'next/image';
 import lg from '../../assets/lg.png';
 import { useRouter } from "next/navigation";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 const LoginPage = () => {
     const router = useRouter();
@@ -21,12 +24,13 @@ const LoginPage = () => {
 
         try {
             response = await axios.post('https://reqres.in/api/login', formulario)
+            toast.success('Login realizado com sucesso!');
             router.push('/user')
-            alert('Login realizado com sucesso!');
             console.log(response.status)
         } catch (error) {
-            alert('Usuário ou senha inválido!');
+            toast.error('Usuário ou senha inválido!');
             console.log(error.response)
+
         }
     };
 
@@ -40,6 +44,12 @@ const LoginPage = () => {
 
     return (
         <main className="HomeFull">
+            <ToastContainer 
+             autoClose={3000} 
+             position="top-center" 
+             theme="colored" 
+             />
+
             <div className="LeftSide">
                 <h1>Simplificamos juntos</h1>
                 <p>Supply Chain | Industrial | Systems</p>
