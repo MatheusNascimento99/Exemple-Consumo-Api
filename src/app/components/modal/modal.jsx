@@ -1,18 +1,14 @@
 import style from './style.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import UserList from '@/app/user/userList';
 
-function ModalUser({ mostrar, onClose, setBtn, btn, userId }) {
+function ModalUser({ onClose, userId }) {
     const [dataUser, setDataUser] = useState(null);
 
-    //!GET(ID)a usuário pelo id
+    //!GET(ID)buscar usuário pelo id
     const getUserId = async (id) => {
         try {
             const response = await axios.get(`https://reqres.in/api/users/${id}`);
-            setDataUser(response.data);
-            console.log(response.data);
-
             setDataUser(response.data.data);
             console.log(response.data.data);
         } catch (error) {
@@ -70,7 +66,7 @@ function ModalUser({ mostrar, onClose, setBtn, btn, userId }) {
         if (userId) {
             getUserId(userId);
         }
-    }, [btn, userId]);
+    }, [ userId]);
 
 
 

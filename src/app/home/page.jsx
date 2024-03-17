@@ -28,7 +28,7 @@ const LoginPage = () => {
             console.log(response.status)
             
         } catch (error) {
-            alert('Usuário ou senha inválidos!' );
+            alert('Usuário ou senha inválido!' );
             console.log(error.response)
 
         }

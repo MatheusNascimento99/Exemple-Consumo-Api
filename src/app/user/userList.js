@@ -10,7 +10,6 @@ const UserList = () => {
   const [listuser, setListUser] = useState([]);
   const [total, setTotal] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [btn, setBtn] = useState(false);
   const [userId, setUserId] = useState(null);
 
   //!GET rota usuários
@@ -36,12 +35,9 @@ const UserList = () => {
   const openModal = (userId) => {
     setUserId(userId);
     setModalOpen(true);
-    setBtn(true);
-    console.log(userId);
   };
 
   const closeModal = () => {
-    setBtn(false);
     setModalOpen(false);
     getUsers();
   };
@@ -99,8 +95,6 @@ const UserList = () => {
       {modalOpen && (
         <ModalUser
           onClose={closeModal}
-          setBtn={setBtn}
-          btn={btn}
           userId={userId}
         />
       )}
