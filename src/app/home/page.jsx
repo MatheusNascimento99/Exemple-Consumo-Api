@@ -7,7 +7,6 @@ import Image from 'next/image';
 import lg from '../../assets/lg.png';
 import { useRouter } from "next/navigation";
 
-
 const LoginPage = () => {
     const router = useRouter();
     const [formulario, setFormulario] = useState({
@@ -16,26 +15,22 @@ const LoginPage = () => {
     })
 
     //!POST - Login
-
-    const aoSubmeter = async (e) => {
+    const AoSubmeter = async (e) => {
         e.preventDefault()
         let response;
 
         try {
             response = await axios.post('https://reqres.in/api/login', formulario)
             router.push('/user')
-            alert('Login realizado com sucesso!' );
+            alert('Login realizado com sucesso!');
             console.log(response.status)
-            
         } catch (error) {
-            alert('Usuário ou senha inválido!' );
+            alert('Usuário ou senha inválido!');
             console.log(error.response)
-
         }
-
     };
 
-    const aoAlterarValores = (e) => {
+    const AoAlterarValores = (e) => {
         const { name, value } = e.target
         setFormulario({
             ...formulario,
@@ -49,22 +44,18 @@ const LoginPage = () => {
                 <h1>Simplificamos juntos</h1>
                 <p>Supply Chain | Industrial | Systems</p>
             </div>
-
-
             <div className="RightSide">
                 <div className="HomeImg">
                     <Image className="logo" src={lg} alt="Logo" />
                 </div>
                 <p>LOGIN</p>
-                <form onSubmit={aoSubmeter}>
+                <form onSubmit={AoSubmeter}>
                     <div className="HomeInput">
-                        <input required placeholder="USUÁRIO" type="text" name="email" onChange={aoAlterarValores}></input>
-                        <input required placeholder="SENHA" type="password" name="password" onChange={aoAlterarValores}></input>
+                        <input autoComplete="email" required placeholder="USUÁRIO" type="text" name="email" onChange={AoAlterarValores}></input>
+                        <input autoComplete="current-password" required placeholder="SENHA" type="password" name="password" onChange={AoAlterarValores}></input>
                     </div>
                     <button type="submit" className="HomeBtn">LOGAR</button>
                 </form>
-
-
                 <div className="RecPassword">
                     <Link className="LinksHome" href={''}><p>ESQUECI MINHA SENHA</p></Link>
                     <Link className="LinksHome" href={''}><p>CADASTRE-SE</p></Link>
@@ -73,6 +64,5 @@ const LoginPage = () => {
         </main>
     )
 }
-
 
 export default LoginPage;

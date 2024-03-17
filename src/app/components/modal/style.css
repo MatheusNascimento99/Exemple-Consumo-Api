@@ -6,11 +6,10 @@
   align-items: center;
   height: 1rem;
   margin: 0px;
-  padding: 1px; 
-  margin-top: -192px;  
-  margin-left: 30px;  
+  padding: 1px;
+  margin-top: -192px;
+  margin-left: 30px;
 }
-
 
 .Modal {
   width: 69.5vw;
@@ -39,7 +38,6 @@
   cursor: pointer;
 }
 
-
 .ModalView {
   align-items: center;
   display: flex;
@@ -52,7 +50,6 @@
 
 .SideRight {
   height: max-content;
-
 }
 
 .ModalView p {
@@ -66,7 +63,6 @@
   color: #000000;
   font-weight: 400;
 }
-
 
 .ModalLabel {
   width: 12rem;
@@ -83,7 +79,6 @@
   margin-top: 2.5rem;
   margin-top: 6rem;
 }
-
 
 .btnModalOne {
   width: 100%;

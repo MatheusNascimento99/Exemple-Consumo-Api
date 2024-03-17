@@ -11,16 +11,18 @@ const UserList = () => {
   const [total, setTotal] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [userId, setUserId] = useState(null);
+  const [page, setPage] = useState(null);
 
   //!GET rota usuários
 
-  const getUsers = async () => {
+  const GetUsers = async () => {
     try {
       const response = await axios.get(
-        "https://reqres.in/api/users?pages=1&per_page=5"
+        `https://reqres.in/api/users?pages=1&per_page=5`
       );
       setListUser(response.data.data);
       setTotal(response.data.total);
+      setPage(response.data.page);
       console.log(response.data.data);
     } catch (error) {
       alert(error.response.data.error);
@@ -29,21 +31,21 @@ const UserList = () => {
   };
 
   useEffect(() => {
-    getUsers();
+    GetUsers();
   }, []);
 
-  const openModal = (userId) => {
+  const OpenModal = (userId) => {
     setUserId(userId);
     setModalOpen(true);
   };
 
-  const closeModal = () => {
+  const CloseModal = () => {
     setModalOpen(false);
-    getUsers();
+    GetUsers();
   };
 
   return (
-    <main>
+    <main className="UserListFull">
       <div className="TableBar">
         <h4>USUÁRIOS</h4> <button>NOVO</button>
       </div>
@@ -65,7 +67,7 @@ const UserList = () => {
               <td>
                 <button className="btnEdit">
                   <Image
-                    onClick={() => openModal(user.id)}
+                    onClick={() => OpenModal(user.id)}
                     className="Pencil"
                     src={Pencil}
                     alt="Imagem caneta"
@@ -90,14 +92,9 @@ const UserList = () => {
         </tbody>
       </table>
       <div className="TableFooter">
-        {listuser.length} de {total}
+        {page}-{listuser.length} de {total}
       </div>
-      {modalOpen && (
-        <ModalUser
-          onClose={closeModal}
-          userId={userId}
-        />
-      )}
+      {modalOpen && <ModalUser onClose={CloseModal} userId={userId} />}
     </main>
   );
 };

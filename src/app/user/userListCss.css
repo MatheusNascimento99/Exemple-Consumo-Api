@@ -1,5 +1,12 @@
 @import url(../globals.css);
 
+.UserListFull {
+    border: solid white 12px;
+    border-bottom: none;
+    height: 100%;
+    ;
+}
+
 .TableBar {
     display: flex;
     justify-content: space-between;
@@ -9,9 +16,8 @@
 
 .TableBar h4 {
     color: #9F9F9F;
-    
+    margin-left: 10px;
 }
-
 
 .TableBar button {
     background-color: #F5F5F5;
@@ -44,14 +50,12 @@
     text-align: center;
 }
 
-
 .TableFooter {
     display: flex;
     justify-content: flex-end;
     padding: 1rem;
     margin-right: 1.5rem;
     font-weight: 500;
-
 }
 
 .Pencil {
@@ -59,8 +63,7 @@
     height: 1.5rem;
 }
 
-.btnEdit{
+.btnEdit {
     border: none;
     cursor: pointer;
 }
-

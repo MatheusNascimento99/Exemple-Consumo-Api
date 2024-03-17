@@ -7,7 +7,6 @@ import Menu from '../../assets/menu.png';
 import Bell from '../../assets/bell.png';
 import Profile from '../../assets/profile.png';
 import RArrow from '../../assets/right-arrow.png';
-import { useState } from 'react';
 
 const UserPage = () => {
     return (
