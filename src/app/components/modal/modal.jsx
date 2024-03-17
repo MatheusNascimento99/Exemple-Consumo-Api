@@ -2,6 +2,7 @@ import style from './style.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 function ModalUser({ onClose, userId }) {
     const [dataUser, setDataUser] = useState(null);
 
@@ -25,8 +26,8 @@ function ModalUser({ onClose, userId }) {
             try {
                 const response = await axios.put(`https://reqres.in/api/users/${id}`);
                 alert('Usuário atualizado com sucesso!');
-                console.log(response.data);
                 CloseModal();
+                console.log(response.data);
                 /* Exemplo de função assíncrona de edição dos usuários:
                 async function editUser(user id){
                     const body = {
@@ -38,6 +39,7 @@ function ModalUser({ onClose, userId }) {
                 }
                 */
             } catch (error) {
+                alert('Erro ao salvar alterações, tente novamente.');
                 console.log(error.response.data.error);
             }
         }
@@ -49,11 +51,11 @@ function ModalUser({ onClose, userId }) {
         if (validation === true) {
             try {
                 const response = await axios.delete(`https://reqres.in/api/users/${id}`);
-                alert('Usuário excluído com sucesso!');
-                console.log(response.status);
+                alert('Usuário excluido com sucesso!');
                 CloseModal();
-
+                console.log(response.status);
             } catch (error) {
+                alert('Erro ao excluir usuário, tente novamente.');
                 console.log(error.response.data.error);
             }
         }

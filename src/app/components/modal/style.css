@@ -44,33 +44,33 @@
   gap: 20vw;
   max-width: 100%;
   flex-wrap: wrap;
-
 }
 
 .SideLeft {
   height: auto;
+  width: 300px;
 }
 
 .SideRight {
   height: max-content;
+  width: 360px;
 }
 
 .ModalView p {
-  width: 28rem;
-  height: 40px;
-  font-size: 1.5vw;
+  width: 25vw;
+  height: auto;
+  font-size: 1.2vw;
   border: 1px solid #9F9F9F;
   margin: 5px 0px 10px 0px;
   display: flex;
   align-items: center;
   color: #000000;
   font-weight: 400;
-  max-width: 100%;
+  padding: 1px;
 }
 
 .ModalLabel {
   width: 12rem;
-
 }
 
 .ModalLabel label {
@@ -97,16 +97,27 @@
   .ModalView {
     display: flex;
     flex-direction: column;
-    gap: 1vw;
+    gap: 1vw; 
   }
 
-  .Modal{
+  .Modal {
     width: 50vw;
-  height: 590px;
+    height: 550px;
   }
 
   .btnModal {
-  margin-top: 1rem;
+    margin-top: 1rem;
   }
-}
 
+  .SideLeft {
+    margin: 0px;
+    padding: 0px;
+  
+  }
+  
+  .SideRight {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+}

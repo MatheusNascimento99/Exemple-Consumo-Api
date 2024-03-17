@@ -6,6 +6,8 @@ import React, { useState, useEffect } from "react";
 import Pencil from "../../assets/pencil.png";
 import ModalUser from "../components/modal/modal.jsx";
 
+
+
 const UserList = () => {
   const [listuser, setListUser] = useState([]);
   const [total, setTotal] = useState(null);
@@ -42,6 +44,7 @@ const UserList = () => {
   const CloseModal = () => {
     setModalOpen(false);
     GetUsers();
+
   };
 
   return (
