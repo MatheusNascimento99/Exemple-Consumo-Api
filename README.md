@@ -1,3 +1,67 @@
+# Teste Frontend HMZ
+Realização do teste de frontend para a HMZ, segue instalação do projeto:
+
+## Instalação
+Segue passo a passo para execução do projeto:
+
+1 - Certifique-se de ter o Node.js instalado em sua máquina. Caso não possua, realize o download no site --> [Node](https://nodejs.org/en/download).
+<br> 2 - No terminal, execute o comando git clone seguido do URL deste [repositório](https://github.com/MatheusNascimento99/hmz-teste-front.git). 
+<br> Por exemplo:
+```shell
+git clone https://github.com/MatheusNascimento99/hmz-teste-front.git
+```
+<br>
+3 - Em seguida, navegue até o diretório onde você deseja clonar o repositório usando o comando cd seguido do caminho para o diretório hmz-teste-front.
+<br>Por exemplo:
+<br>
+
+```
+cd caminho/do/seu/diretorio(hmz-teste-front)
+```
+<br>
+4 - Rode os comandos abaixo para inicialização do projeto:
+<br>
+
+```
+npm install
+```
+```
+npm run dev
+```
+
+### Segue abaixo o conteúdo do arquivo package.json, com suas respectivas versões e comandos:
+
+## Scripts:
+| Nome | Comando |
+|----------|----------|
+| dev   | npm run dev  |
+| buils  | npm run build   |
+| start  | npm run start   |
+| lint  | npm run lint   |
+
+## Dependências de Produção:
+| Nome | Versão | Comando de Instalação |
+|----------|----------|----------|
+| axios   | 1.6.7  | npm install axios@1.6.7   |
+| next   | 14.1.3   | npm install next@14.1.3   |
+| react   | 18   | npm install react@18  |
+| react-dom   | 18   | npm install react-dom@18  |
+| react-toastify   | 10.0.5   | npm install react-toastify@10.0.5   |
+
+## Dependências de Desenvolvimento:
+| Nome | Versão	 | Comando de Instalação |
+|----------|----------|----------|
+| eslint   | 8   | npm install eslint@8   |
+| eslint-config-next   | 14.1.3   | npm install eslint-config-next@14.1.3   |
+
+<br>
+<br>
+# Telas
+## Telas inical
+
+
+## Comando padrão para instalção do programa conforme documentação:
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
