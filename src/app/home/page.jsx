@@ -24,11 +24,11 @@ const LoginPage = () => {
         try {
             response = await axios.post('https://reqres.in/api/login', formulario)
             router.push('/user')
-            alert(`Login realizado com sucesso! status ${response.status}` );
-            console.log(response)
+            alert('Login realizado com sucesso!' );
+            console.log(response.status)
             
         } catch (error) {
-            alert(`Usuário não encontrado! status ${error.response.status}` );
+            alert('Usuário ou senha inválidos!' );
             console.log(error.response)
 
         }

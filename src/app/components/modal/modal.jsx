@@ -1,6 +1,7 @@
 import style from './style.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import UserList from '@/app/user/userList';
 
 function ModalUser({ mostrar, onClose, setBtn, btn, userId }) {
     const [dataUser, setDataUser] = useState(null);
@@ -15,27 +16,21 @@ function ModalUser({ mostrar, onClose, setBtn, btn, userId }) {
             setDataUser(response.data.data);
             console.log(response.data.data);
         } catch (error) {
-            /* alert(error.response.data.error);
-            console.log(error.response.data.error); */
+            alert(error.response.data.error);
+            console.log(error.response.data.error);
         }
     };
 
 
     //!PUT - atualizar usuário pelo id
     const updateUserId = async (id) => {
-
-        /* exemplo hopotético
-        const [user, setUser] = useState([]);
-        async function getUserEdit() {
-            const { data } = await getUserId.getUserEdit(userId)
-        }
-        setUser(data.response) */
+        const validation = confirm('Tem certeza que deseja atualizar as informações deste usuário?')
+        if(validation === true ){
         try {
             const response = await axios.put(`https://reqres.in/api/users/${id}`);
-            alert(`Usuário atualizado com sucesso! status ${response.status}`);
-            closeModal();
+            alert('Usuário atualizado com sucesso!');
             console.log(response.data);
-
+            closeModal();
             /* Exemplo de função assíncrona de edição dos usuários:
             async function editUser(user id){
                 const body = {
@@ -45,36 +40,29 @@ function ModalUser({ mostrar, onClose, setBtn, btn, userId }) {
                     name:String(user.avatar)
                 }
             }
-            if(condição de atualização sobre os campos){
-                await userService(classe para conecção com backend).updateUser(id)
-            }
             */
         } catch (error) {
-            //console.lpg(error.response.data.error)
+            console.log(error.response.data.error)
+        }
         }
     }
 
     //!DELET - excluir usuário pelo id
     const deletUserId = async (id) => {
-        /* exemplo hopotético
-        async function deleteUser() {
-            const { data } = await getUserId.deleteUser(userId)
-            try{
-                let validation = confirm(`Tem certeza que deseja excluir o usuário ${}?`)
-                if(validation){
-                    await userService(classe para conecção com backend).deleteUser(id)
-                }
-            }
-        } */
-        try {
+        let validation = confirm('Tem certeza que deseja excluir este usuário?')
+        if (validation === true) {
+            try {
+                const response = await axios.delete(`https://reqres.in/api/users/${id}`);
+                alert('Usuário excluído com sucesso!');
+                console.log(response.status);
+                closeModal();
+                console.log();
 
-            const response = await axios.delete(`https://reqres.in/api/users/${id}`);
-            alert(`Usuário excluído com sucesso! status ${response.status}`);
-            console.log(response.status);
-            closeModal();
-        } catch (error) {
-            //console.lpg(error.response.data.error)
+            } catch (error) {
+                console.log(error.response.data.error)
+            }
         }
+
     }
 
 
@@ -98,37 +86,37 @@ function ModalUser({ mostrar, onClose, setBtn, btn, userId }) {
                 <h4>EDITAR USUÁRIOS</h4>
                 {dataUser && (
                     <div className='ModalView'>
-                        
+
                         <div className="SideLeft">
-                        <div className='ModalLabel'>
-                            <label htmlFor="id">Id</label>
-                            <p>{dataUser.id}</p>
-                        </div>
-                        <div className='ModalLabel'>
-                            <label htmlFor="first_name">Nome</label>
-                            <p>{dataUser.first_name}</p>
-                        </div>
-                        <div className='ModalLabel'>
-                            <label htmlFor="last_name">Sobrenome</label>
-                            <p>{dataUser.last_name}</p>
-                        </div>
+                            <div className='ModalLabel'>
+                                <label htmlFor="id">Id</label>
+                                <p>{dataUser.id}</p>
+                            </div>
+                            <div className='ModalLabel'>
+                                <label htmlFor="first_name">Nome</label>
+                                <p>{dataUser.first_name}</p>
+                            </div>
+                            <div className='ModalLabel'>
+                                <label htmlFor="last_name">Sobrenome</label>
+                                <p>{dataUser.last_name}</p>
+                            </div>
                         </div>
                         <div className="SideRight">
-                        <div className='ModalLabel'>
-                            <label htmlFor="Email">Email</label>
-                            <p>{dataUser.email}</p>
+                            <div className='ModalLabel'>
+                                <label htmlFor="Email">Email</label>
+                                <p>{dataUser.email}</p>
+                            </div>
+                            <div className='ModalLabel'>
+                                <label htmlFor="Foto">Foto</label>
+                                <p>{dataUser.avatar}</p>
+                            </div>
+                            <div className='ModalLabel'>
+                                <label htmlFor="OutrosCampos">OutrosCampos</label>
+                                <p>{'outros campos'}</p>
+                            </div>
                         </div>
-                        <div className='ModalLabel'>
-                            <label htmlFor="Foto">Foto</label>
-                            <p>{dataUser.avatar}</p>
-                        </div>
-                        <div className='ModalLabel'>
-                            <label htmlFor="OutrosCampos">OutrosCampos</label>
-                            <p>{'outros campos'}</p>
-                        </div>
-                        </div>
-                        
-                        
+
+
 
 
                     </div>
