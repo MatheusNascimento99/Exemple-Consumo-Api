@@ -1,5 +1,15 @@
-# Teste Frontend HMZ
-Realização do teste de frontend para a HMZ, segue instalação do projeto:
+# Exemplo Consumo Api
+Realização de prática de consumo de Api, segue instalação do projeto:
+
+## E-mails aceitos para login:
+| E-mail |
+|----------|
+| george.bluth@reqres.in   | 
+| janet.weaver@reqres.in  | 
+| emma.wong@reqres.in  | 
+| eve.holt@reqres.in  | 
+| charles.morris@reqres.in | 
+*Para fins de estudo, toda e qualquer senha é aceita
 
 ## Instalação
 Segue passo a passo para execução do projeto:
