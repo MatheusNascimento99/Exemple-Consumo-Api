@@ -8,7 +8,7 @@ Segue passo a passo para execução do projeto:
 <br> 2 - No terminal, execute o comando git clone seguido do URL deste [repositório](https://github.com/MatheusNascimento99/hmz-teste-front.git). 
 <br> Por exemplo:
 ```shell
-git clone https://github.com/MatheusNascimento99/hmz-teste-front.git
+git clone https://github.com/MatheusNascimento99/Consumo-Api.git
 ```
 <br>
 3 - Em seguida, navegue até o diretório onde você deseja clonar o repositório usando o comando cd seguido do caminho para o diretório hmz-teste-front.
@@ -16,7 +16,7 @@ git clone https://github.com/MatheusNascimento99/hmz-teste-front.git
 <br>
 
 ```
-cd caminho/do/seu/diretorio(hmz-teste-front)
+cd caminho/do/seu/diretorio(Consumo-Api)
 ```
 <br>
 4 - Rode os comandos abaixo para inicialização do projeto:
