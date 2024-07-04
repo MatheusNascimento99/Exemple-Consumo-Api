@@ -1,0 +1,69 @@
+@import url(../globals.css);
+
+.UserListFull {
+    border: solid white 12px;
+    border-bottom: none;
+    height: 100%;
+    ;
+}
+
+.TableBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0rem 1rem 0rem;
+    background-color: #FFFFFF;
+}
+
+.TableBar h4 {
+    color: #9F9F9F;
+    margin-left: 10px;
+}
+
+.TableBar button {
+    background-color: #F5F5F5;
+    color: #9F9F9F;
+    border: none;
+    width: 6rem;
+    height: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.TableUserList {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.TableUserList th {
+    color: #1F1F1F;
+}
+
+.TableUserList td {
+    color: #5e5e5e;
+    font-weight: 500;
+}
+
+.TableUserList th,
+.TableUserList td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.TableFooter {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    margin-right: 1.5rem;
+    font-weight: 500;
+}
+
+.Pencil {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.btnEdit {
+    border: none;
+    cursor: pointer;
+}

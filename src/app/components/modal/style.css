@@ -1,0 +1,123 @@
+@import url(../../globals.css);
+
+.ModalContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1rem;
+  margin: 0px;
+  padding: 1px;
+  margin-top: -192px;
+  margin-left: 30px;
+}
+
+.Modal {
+  width: 69.5vw;
+  height: 460px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 3rem;
+  -webkit-box-shadow: 0px 30px 49px -1px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0px 30px 49px -1px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 30px 49px -1px rgba(0, 0, 0, 0.45);
+}
+
+.Modal h4 {
+  color: #9F9F9F;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.Modal button {
+  background-color: #F5F5F5;
+  color: #9F9F9F;
+  border: none;
+  width: 6rem;
+  height: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ModalView {
+  align-items: center;
+  display: flex;
+  gap: 20vw;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.SideLeft {
+  height: auto;
+  width: 300px;
+}
+
+.SideRight {
+  height: max-content;
+  width: 360px;
+}
+
+.ModalView p {
+  width: 25vw;
+  height: auto;
+  font-size: 1.2vw;
+  border: 1px solid #9F9F9F;
+  margin: 5px 0px 10px 0px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-weight: 400;
+  padding: 1px;
+}
+
+.ModalLabel {
+  width: 12rem;
+}
+
+.ModalLabel label {
+  color: #9F9F9F;
+  font-weight: 600;
+}
+
+.btnModal {
+  display: flex;
+  margin-top: 6rem;
+}
+
+.btnModalOne {
+  width: 100%;
+}
+
+.btnModalTwu {
+  gap: 2vw;
+  display: flex;
+}
+
+@media screen and (max-width:975px) {
+
+  .ModalView {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw; 
+  }
+
+  .Modal {
+    width: 50vw;
+    height: 550px;
+  }
+
+  .btnModal {
+    margin-top: 1rem;
+  }
+
+  .SideLeft {
+    margin: 0px;
+    padding: 0px;
+  
+  }
+  
+  .SideRight {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+}
