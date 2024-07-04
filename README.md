@@ -11,6 +11,9 @@ Realização de prática de consumo de Api, segue instalação do projeto:
 | charles.morris@reqres.in | 
 *Para fins de estudo, toda e qualquer senha é aceita
 
+Poder ser verificado na [Vercel](https://exemple-consumo-api.vercel.app/user)
+## OBS: Esta api possui banco de dados Fake, devido a isso as alteaçãoes não refletem na tela.
+
 ## Instalação
 Segue passo a passo para execução do projeto:
 
