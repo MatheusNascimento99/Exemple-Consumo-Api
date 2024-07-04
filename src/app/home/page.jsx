@@ -52,7 +52,7 @@ const LoginPage = () => {
 
             <div className="LeftSide">
                 <h1>Simplificamos juntos</h1>
-                <p>Supply Chain | Industrial | Systems</p>
+                <p>Solutions| Industrial | Systems</p>
             </div>
             <div className="RightSide">
                 <div className="HomeImg">
